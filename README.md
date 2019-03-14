@@ -1,4 +1,4 @@
-# Email-Enum
+# Email-Enum-SEO
 [![Version](https://img.shields.io/badge/Version-v0.5-brightgreen.svg)](https://shields.io/)
 [![Status](https://img.shields.io/badge/Status-Initial-brightgreen.svg)](https://shields.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey.svg)](https://shields.io/)
