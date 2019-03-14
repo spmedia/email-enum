@@ -7,6 +7,11 @@
 
 **Email-Enum SEO Edition searches mainstream SEO websites and tells you if an email is registered!**
 
+This will search a list of popular webmaster, SEO, and marketing tools and let you know if the email has an account on any of those services.
+
+Inspired by https://github.com/Frint0/email-enum
+
+
 ![Demo Photo](https://raw.githubusercontent.com/Frint0/email-enum/master/demo.png)
 
 ## Dependencies
@@ -20,7 +25,7 @@
 Do not run **setup.sh** as root!
 
 ```
-git clone https://github.com/Frint0/email-enum.git
+git clone https://github.com/spmedia/email-enum.git
 cd email-enum
 chmod +x setup.sh
 ./setup.sh
