@@ -31,6 +31,8 @@ git clone https://github.com/spmedia/email-enum.git
 cd email-enum
 chmod +x setup.sh
 ./setup.sh
+cd /bin
+chmod +x geckodriver
 ```
 
 ## Usage
