@@ -20,7 +20,7 @@ def mozCheck(email):
     if "That user was" in driver.page_source:
         result = "Not found"
         return result
-    if "That user was" not in driver.page_source:
+    if "Instructions to reset" in driver.page_source:
         result = "Found"
         return result
     if "Please wait 10 minutes before sending another password reset email." in driver.page_source:
@@ -49,25 +49,6 @@ def twitterCheck(email):
     else:
         result = "Capthca encountered, you'll have to check this manually"
         return result
-
-def snapchatCheck(email):
-    driver.get("https://accounts.snapchat.com/accounts/password_reset_request")
-    assert "Reset Password" in driver.title
-    sleep(1.5)
-    user = driver.find_element_by_name("emailaddress")
-    user.send_keys(email)
-    driver.find_element_by_xpath("/html/body/div[1]/div/div/div[3]/article/div/div[3]/form/div[3]/button").click()
-    sleep(2)
-    if "Email address is" in driver.page_source:
-        result = "Not Found"
-        return result
-    if "Email address is invalid" not in driver.page_source and "If you know your current password, you may" in driver.page_source:
-        result = "Capthca encountered, you'll have to check this manually"
-        return result
-    else:
-        result = "Found"
-        return result
-
 
 def opencartCheck(email):
     driver.get("https://www.opencart.com/index.php?route=account/forgotten")
