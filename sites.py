@@ -12,11 +12,11 @@ def quitSelenium():
 def mozCheck(email):
     driver.get("https://moz.com/lost-password")
     assert "Reset" in driver.title
-    sleep(1.5)
+    sleep(3)
     user = driver.find_element_by_name("data[User][email]")
     user.send_keys(email)
     driver.find_element_by_xpath('//button["Submit"]').click()
-    sleep(1.5)
+    sleep(3)
     if "That user was" in driver.page_source:
         result = "Not found"
         return result
