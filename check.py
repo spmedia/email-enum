@@ -23,8 +23,8 @@ def emailEnum(email):
         print(colored("Firefox not installed or isn't in PATH, exiting...", 'yellow'))
         sys.exit()
     import sites
-    insta_response = sites.mozCheck(email)
-    print("[*] Moz: " + insta_response)
+    moz_response = sites.mozCheck(email)
+    print("[*] Moz: " + moz_response)
     twit_response = sites.twitterCheck(email)
     print("[*] Twitter: " + twit_response)
     snap_response = sites.snapchatCheck(email)
