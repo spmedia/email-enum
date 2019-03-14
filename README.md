@@ -5,7 +5,7 @@
 [![Browser](https://img.shields.io/badge/Browser-Firefox-brightgreen.svg)](https://shields.io/)
 [![Made with Python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-**Email-Enum searches mainstream websites and tells you if an email is registered!**
+**Email-Enum SEO Edition searches mainstream SEO websites and tells you if an email is registered!**
 
 ![Demo Photo](https://raw.githubusercontent.com/Frint0/email-enum/master/demo.png)
 
@@ -41,4 +41,4 @@ chmod +x setup.sh
 
 ## Disclaimer
 
-This program is done entirely by web scraping, if a website changes its element variables or layout, you might need to wait for an updated version of Email-Enum or feel free to contribute.
+This program is done entirely by web scraping, if a website changes its element variables or layout, you might need to wait for an updated version of Email-Enum SEO Edition or feel free to contribute.
