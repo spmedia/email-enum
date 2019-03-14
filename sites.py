@@ -10,17 +10,17 @@ def quitSelenium():
     driver.quit()
 
 def instagramCheck(email):
-    driver.get("https://www.instagram.com/accounts/login/")
-    assert "Login" in driver.title
+    driver.get("https://moz.com/lost-password")
+    assert "Reset" in driver.title
     sleep(1.5)
-    user = driver.find_element_by_name("username")
+    user = driver.find_element_by_name("email")
     user.send_keys(email)
-    driver.find_element_by_xpath('//button["Log in"]').click()
+    driver.find_element_by_xpath('//button["Submit"]').click()
     sleep(1)
-    if "The username you entered does" in driver.page_source:
-        result = "Not Found"
+    if "That user was" in driver.page_source:
+        result = "Not found"
         return result
-    if "The username you entered does" not in driver.page_source:
+    if "That user was" not in driver.page_source:
         result = "Found"
         return result
     else:
