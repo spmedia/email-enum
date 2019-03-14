@@ -14,8 +14,8 @@ def asciiBanner():
 @click.argument('email', nargs=1)
 def emailEnum(email):
     print(colored(asciiBanner(), 'magenta'))
-    print(colored("Author: ", 'green') + "Frinto")
-    print(colored("Version: ", 'green') + colored("v0.5", 'yellow'))
+    print(colored("Author: ", 'green') + "spmedia")
+    print(colored("Version: ", 'green') + colored("v0.01", 'yellow'))
     print("\n\n")
     try:
         firefox_check = subprocess.check_output(['which', 'firefox'])
