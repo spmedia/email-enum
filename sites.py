@@ -9,7 +9,7 @@ driver = webdriver.Firefox(firefox_options=options)
 def quitSelenium():
     driver.quit()
 
-def instagramCheck(email):
+def mozCheck(email):
     driver.get("https://moz.com/lost-password")
     assert "Reset" in driver.title
     sleep(1.5)
