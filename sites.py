@@ -16,12 +16,15 @@ def mozCheck(email):
     user = driver.find_element_by_name("data[User][email]")
     user.send_keys(email)
     driver.find_element_by_xpath('//button["Submit"]').click()
-    sleep(1)
+    sleep(1.5)
     if "That user was" in driver.page_source:
         result = "Not found"
         return result
     if "Instructions to reset" in driver.page_source:
         result = "Found"
+        return result
+    if "That email address appears to be invalid." in driver.page_source:
+        result = "Email address invalid"
         return result
     if "Please wait 10 minutes before sending another password reset email." in driver.page_source:
         result = "Exceeded maximum tries, try again later"
