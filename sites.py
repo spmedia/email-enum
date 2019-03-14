@@ -23,6 +23,9 @@ def mozCheck(email):
     if "That user was" not in driver.page_source:
         result = "Found"
         return result
+    if "Please wait 10 minutes before sending another password reset email." in driver.page_source:
+        result = "Exceeded maximum tries, try again later"
+        return result
     else:
         print("Captcha encountered, you'll have to check this manually")
 
@@ -65,21 +68,23 @@ def snapchatCheck(email):
         result = "Found"
         return result
 
-def facebookCheck(email):
-    driver.get("https://www.facebook.com/login/identify/?ctx=recover&ars=royal_blue_bar")
-    assert "Forgot Password" in driver.title
-    sleep(1)
-    user = driver.find_element_by_xpath('//*[@id="identify_email"]')
+
+def opencartCheck(email):
+    driver.get("https://www.opencart.com/index.php?route=account/forgotten")
+    assert "Forgotten" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("email")
     user.send_keys(email)
-    user.send_keys(Keys.ENTER)
-    #driver.find_element_by_xpath('//*[@id="u_0_2"]').click()
-    sleep(2)
-    if "No Search Results" in driver.page_source:
-        result = "Not Found"
+    driver.find_element_by_xpath('//button["Submit"]').click()
+    sleep(1)
+    if "Warning: The E-Mail Address was not found" in driver.page_source:
+        result = "Not found"
         return result
-    if "No Search Results" and "No longer have access to these?" in driver.page_source:
+    if "Success: An email with a reset link" in driver.page_source:
         result = "Found"
         return result
-    else:
-        result = "Capthca encountered, you'll have to check this manually"
+    if "Please wait 10 minutes before sending another password reset email." in driver.page_source:
+        result = "Exceeded maximum tries, try again later"
         return result
+    else:
+        print("Captcha encountered, you'll have to check this manually")
