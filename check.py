@@ -7,7 +7,7 @@ import subprocess
 
 def asciiBanner():
     import pyfiglet
-    banner = pyfiglet.figlet_format("Email Enum")
+    banner = pyfiglet.figlet_format("Email Enum SEO Edition")
     return banner
 
 @click.command()
