@@ -9,7 +9,7 @@
 
 This will search a list of popular webmaster, SEO, and marketing tools and let you know if the email has an account on any of those services. Users of these services and websites often have direct access to many companies servers, CMS logins, API keys, and more. 
 
-Doing recon on these users can be helpful when trying to identify key users or services to gain a foothold in a company or business.
+Doing recon on these users can be helpful when trying to identify key users or services to help gain a foothold in a company or business.
 
 Inspired by https://github.com/Frint0/email-enum
 
