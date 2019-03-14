@@ -29,8 +29,8 @@ def emailEnum(email):
     print("[*] Twitter: " + twit_response)
     snap_response = sites.snapchatCheck(email)
     print("[*] Snapchat: " + snap_response)
-    face_response = sites.facebookCheck(email)
-    print("[*] Facebook: " + face_response)
+    open_response = sites.opencartCheck(email)
+    print("[*] OpenCart: " + open_response)
     sites.quitSelenium()
 
 emailEnum()
