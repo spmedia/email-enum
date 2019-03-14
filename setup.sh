@@ -7,5 +7,6 @@ if [[ $EUID -eq 0 ]]; then
 pip3 install click --user
 pip3 install termcolor --user
 pip3 install selenium --user
+pip3 install pyfiglet --user
 mkdir -p ~/.local/bin/
 mv geckodriver ~/.local/bin/geckodriver
