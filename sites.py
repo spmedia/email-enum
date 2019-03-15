@@ -86,3 +86,71 @@ def botifyCheck(email):
         return result
     else:
         print("Failed. Plz manually try.")        
+
+def ravenCheck(email):
+    driver.get("https://raven-seo-tools.com/tools/m/login/forgot_password/")
+    assert "Forgot" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("username")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Reset Password"]').click()
+    sleep(1)
+    if "Unable to locate" in driver.page_source:
+        result = "Not found"
+        return result
+    if "We sent an email to" in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")        
+        
+def screamCheck(email):
+    driver.get("https://www.screamingfrog.co.uk/lostpassword/")
+    assert "Lost" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("user_login")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Get New Password"]').click()
+    sleep(1)
+    if "ERROR: There is no user" in driver.page_source:
+        result = "Not found"
+        return result
+    if "Check your e-mail" in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")        
+
+def wooCheck(email):
+    driver.get("https://www.woorank.com/en/login/forgot")
+    assert "Forgot your" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("username_email")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Rest my password"]').click()
+    sleep(1)
+    if "This user does not exist" in driver.page_source:
+        result = "Not found"
+        return result
+    if "Check your e-mail" not in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")             
+        
+def answerCheck(email):
+    driver.get("https://answerthepublic.com/users/password/new")
+    assert "AnswerThe" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("user[email]")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Send password reset instructions"]').click()
+    sleep(1)
+    if "1 error prohibited" in driver.page_source:
+        result = "Not found"
+        return result
+    if "You will receive an email with instructions" in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")                     
