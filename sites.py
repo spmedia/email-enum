@@ -69,3 +69,20 @@ def opencartCheck(email):
         return result
     else:
         print("Captcha encountered, you'll have to check this manually")
+        
+def botifyCheck(email):
+    driver.get("https://app.botify.com/password/reset/")
+    assert "Reset" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("email")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Reset"]').click()
+    sleep(1)
+    if "The email was not found." in driver.page_source:
+        result = "Not found"
+        return result
+    if "An e-mail has been sent" in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")        
