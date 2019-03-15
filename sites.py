@@ -154,3 +154,71 @@ def answerCheck(email):
         return result
     else:
         print("Failed. Plz manually try.")                     
+
+def spyCheck(email):
+    driver.get("https://www.spyfu.com/auth/forgotpassword")
+    assert "Forgot" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_id("forgot_password_email")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Send My Password"]').click()
+    sleep(1)
+    if "Your new password is on its way" not in driver.page_source:
+        result = "Not found"
+        return result
+    if "Your new password is on its way" in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")                     
+        
+def microCheck(email):
+    driver.get("https://clients.micrositemasters.com/users/password/new")
+    assert "Microsite" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("user[email]")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Send me reset password instructions"]').click()
+    sleep(1)
+    if "not found" in driver.page_source:
+        result = "Not found"
+        return result
+    if "not found" not in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")            
+        
+def buzzsumoCheck(email):
+    driver.get("https://app.buzzsumo.com/password/remind")
+    assert "BuzzSumo" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("email")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Reset Password"]').click()
+    sleep(1)
+    if "Success! We have e-mailed your password reset link" not in driver.page_source:
+        result = "Not found"
+        return result
+    if "Success! We have e-mailed your password reset link!" in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")             
+       
+def ninjaCheck(email):
+    driver.get("https://app.ninjaoutreach.com/Account/ForgotPassword")
+    assert "Forgot" in driver.title
+    sleep(1.5)
+    user = driver.find_element_by_name("Email")
+    user.send_keys(email)
+    driver.find_element_by_xpath('//button["Submit"]').click()
+    sleep(1)
+    if "Error! This email was not found" in driver.page_source:
+        result = "Not found"
+        return result
+    if "Success! Please, check your email to reset your password." in driver.page_source:
+        result = "Found"
+        return result
+    else:
+        print("Failed. Plz manually try.")                 
