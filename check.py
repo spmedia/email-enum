@@ -29,7 +29,7 @@ def emailEnum(email):
     print("[*] Twitter: " + twit_response)
     open_response = sites.opencartCheck(email)
     print("[*] OpenCart: " + open_response)
-    botify_respose = sites.botifyCheck(email)
+    botify_response = sites.botifyCheck(email)
     print("[*] Botify: " + botify_response)
     sites.quitSelenium()
 
