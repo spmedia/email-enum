@@ -67,8 +67,5 @@ def opencartCheck(email):
     if "Success: An email with a reset link" in driver.page_source:
         result = "Found"
         return result
-    if "Please wait 10 minutes before sending another password reset email." in driver.page_source:
-        result = "Exceeded maximum tries, try again later"
-        return result
     else:
         print("Captcha encountered, you'll have to check this manually")
