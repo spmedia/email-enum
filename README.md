@@ -13,6 +13,7 @@ Doing recon on these users can be helpful when trying to identify key users or s
 
 Inspired by https://github.com/Frint0/email-enum
 
+PS - at the moment this is broken af bc I suck at python and error/exception logic.
 
 ![Demo Photo](https://raw.githubusercontent.com/Frint0/email-enum/master/demo.png)
 
